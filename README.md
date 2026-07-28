@@ -1,47 +1,52 @@
-# M1 Radio — сайт
+# Moral TV — Website
 
-Публичный сайт радиостанции **M1 Radio** (Moral Together): каналы живого вещания (радио + видео), 24/7.
-Канал = ведущий: главная станция — живой эфир, остальные — тематические каналы со своим ведущим.
+Public website for **Moral TV** (Moral Together): live broadcast channels (radio + video), 24/7.
+Channel = host: the main channel is the live broadcast, other channels are themed with their own host.
 
-**Как открыть:** открыть `index.html` в браузере — сайт работает прямо с диска, сборка не нужна.
+**How to open:** open `index.html` in a browser — the site works straight from disk, no build needed.
 
 ---
 
-## Стек
+## Stack
 
-Статический сайт: HTML + CSS + JS, без фреймворка. Шрифт Rubik, RTL (иврит).
-Сайт только **читает** данные из публичного API (каталог станций, посты блога) и ничего не пишет. Если API недоступен — используется встроенный снимок данных, поэтому страница всегда работает.
+Static site: HTML + CSS + JS, no framework. Rubik font, RTL (Hebrew).
+The site only **reads** data from the public API (station catalog, blog posts) and never writes. If the API is unavailable, a built-in data snapshot is used, so the page always works.
 
-## Страницы
+## Pages
 
-| Файл | Раздел |
+| File | Section |
 |---|---|
-| `index.html` | Главная |
-| `stations.html` | Каналы — плеер (радио / видео) + сетка станций |
-| `hosts.html` | Ведущие |
-| `blog.html` | מה חדש — новости / блог |
-| `about.html` | О нас |
-| `ads.html` | Реклама — форма заявки |
-| `apps.html` | Приложение |
+| `index.html` | Home |
+| `stations.html` | Channels — player (radio / video) + station grid |
+| `hosts.html` | Hosts |
+| `blog.html` | מה חדש — News / blog |
+| `about.html` | About |
+| `ads.html` | Advertising — inquiry form |
+| `apps.html` | App |
 
-Меню: `דף הבית · ערוצים · שדרנים · מה חדש · אפליקציה · אודות · פרסום`.
+Menu: `דף הבית · ערוצים · פרויקטים · שדרנים · מה חדש · אפליקציה · אודות · פרסום`.
 
-## Данные
+## Data
 
-- **Станции** — публичный API `GET /api/public/stations?type=radio`. Ключ станции — `slug`, аудиопоток в `stream_url`, видео по шаблону `{slug}/index.m3u8`. Логотипы подхватываются из `logo_url`, как только в админке загрузят настоящие.
-- **Блог** — `GET /api/v1/posts` (пока постов нет — показываются статьи-примеры в точном формате будущего API; появятся реальные — подменятся сами).
-- Каталог редактируется только в админке; сайт и приложение читают.
+- **Stations** — public API `GET /api/public/stations?type=radio`. Station key is `slug`, audio stream in `stream_url`, video follows the pattern `{slug}/index.m3u8`. Logos are picked up from `logo_url` as soon as real ones are uploaded in the admin panel.
+- **Blog** — `GET /api/v1/posts` (no posts yet — sample articles are shown in the exact format of the future API; once real posts exist they will replace them automatically).
+- The catalog is edited only in the admin panel; the site and app only read it.
 
-## Плеер
+## Player
 
-Клик по станции запускает живой поток; внизу — плеер-док (play/pause, громкость, статусы). На странице «Каналы» — плеер-«театр» с переключателем радио/видео (видео через HLS, hls.js).
+Clicking a station starts the live stream; at the bottom is a player dock (play/pause, volume, status). On the "Channels" page there's a "theater" player with a radio/video switch (video via HLS, hls.js).
 
-## Что пока заглушки (ждём от заказчика)
+## Home page — Projects & Content Worlds
 
-- Ссылки на магазины приложений и соцсети, страница политики конфиденциальности (текст есть).
-- Отправка форм на сервер (сейчас success-state на клиенте).
-- Реальные фото ведущих и студии, настоящие логотипы станций, имена ведущих.
+- **Projects** section: links out to the other Moral family projects (Moral4Good, Moral Together, Stage of Stars, Trust Moms, God's Will Ambassador). Projects without a live URL yet (Trust Moms App, Best News, VVIP, World Wide Event Production) are shown as "Coming soon" placeholders — do not invent URLs for these until the client supplies them.
+- **Content Worlds** section: live broadcast, VOD, and the themed Moral channels (Kids, Teens, Seniors, Sport, Environment, Animals, Young Ambassadors, Neighborhoods). These currently link to the general channels page until dedicated channel pages exist.
 
-## Ассеты
+## What's still placeholder (waiting on the client)
 
-`assets/` — логотип, фото-заглушки (`placeholders/`), скриншоты приложения (`app/`). Когда появятся реальные медиа — достаточно заменить файлы, вёрстка не меняется.
+- App store / social media links, privacy policy page (text exists).
+- Server-side form submission (currently a client-side success state).
+- Real host and studio photos, real station logos, host names.
+
+## Assets
+
+`assets/` — logo, photo placeholders (`placeholders/`), app screenshots (`app/`). Once real media is available, just replace the files — the layout doesn't need to change.
