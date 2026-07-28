@@ -311,6 +311,25 @@ a.disc-live:hover, a.disc-live:focus-visible {
 .wave svg { width: 100%; height: 70px; display: block; transform: translateY(1px); }
 .hero + * { padding-top: 64px; }
 
+/* --- HERO projects strip: первая строка hero, ссылки на проекты Moral --- */
+.hero-strip {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  padding-top: 22px; margin-bottom: -4px;
+}
+.hs-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .18);
+  color: #EFE9FA; font-size: 13px; font-weight: 600;
+  padding: 7px 14px; border-radius: 999px; transition: .18s;
+  backdrop-filter: blur(6px);
+}
+.hs-pill:hover { background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .32); transform: translateY(-2px); }
+.hs-pill .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+@media (max-width: 767px) {
+  .hero-strip { padding-top: 14px; }
+  .hs-pill { font-size: 12px; padding: 6px 11px; }
+}
+
 /* --- HERO вариант B: фоновая фотография (index-hero2.html).
    Тот же контент, но первый экран — тёмный блок с фото студии под
    фиолетовым оверлеем (паттерн Radio TV / .page-band). --- */
