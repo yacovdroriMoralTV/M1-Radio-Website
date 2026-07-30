@@ -348,7 +348,7 @@ a.disc-live:hover, a.disc-live:focus-visible {
 .hero-photo {
   background:
     linear-gradient(260deg, rgba(23, 13, 40, .93) 32%, rgba(23, 13, 40, .62) 64%, rgba(23, 13, 40, .38)),
-    url("assets/placeholders/backgrounds/bg-02-home-podcast-studio.jpg") center / cover no-repeat,
+    url("assets/placeholders/backgrounds/bg-04-tv-camera-studio.jpg") center / cover no-repeat,
     #101B36;
 }
 .hero-photo h1 { color: #fff; }
@@ -365,7 +365,7 @@ a.disc-live:hover, a.disc-live:focus-visible {
   .hero-photo {
     background:
       linear-gradient(rgba(13, 20, 40, .88), rgba(13, 20, 40, .82)),
-      url("assets/placeholders/backgrounds/bg-02-home-podcast-studio.jpg") center / cover no-repeat,
+      url("assets/placeholders/backgrounds/bg-04-tv-camera-studio.jpg") center / cover no-repeat,
       #101B36;
   }
   /* на мобильном буллеты — белые карточки, возвращаем тёмный текст */

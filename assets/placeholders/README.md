@@ -2,11 +2,13 @@
 
 Stock photos downloaded via Magnific / Freepik on 2026-07-07.
 
+`bg-04-tv-camera-studio.jpg` and `person-06-smiling-tv-host.jpg` were added on 2026-07-30, sourced free from Pexels (no attribution required), to give the main index.html hero a TV-station look.
+
 ## Structure
 
 - `stations/` - 12 square station placeholders, 1000px wide.
-- `people/` - 5 host/person portrait placeholders, 1000px wide.
-- `backgrounds/` - 3 wider background placeholders, 1800px wide.
+- `people/` - 6 host/person portrait placeholders, 1000px wide.
+- `backgrounds/` - 4 wider background placeholders, 1800px wide.
 
 ## Files
 
@@ -32,9 +34,11 @@ Stock photos downloaded via Magnific / Freepik on 2026-07-07.
 - `people/person-03-woman-host-headset.jpg`
 - `people/person-04-man-podcast-studio.jpg`
 - `people/person-05-smiley-man-podcast.jpg`
+- `people/person-06-smiling-tv-host.jpg` - Pexels #8412316, used in the index.html hero "disc" photo.
 
 ### Backgrounds
 
 - `backgrounds/bg-01-microphone-blur.jpg`
 - `backgrounds/bg-02-home-podcast-studio.jpg`
 - `backgrounds/bg-03-radio-equipment.jpg`
+- `backgrounds/bg-04-tv-camera-studio.jpg` - Pexels #10024744, used as the index.html hero background.
