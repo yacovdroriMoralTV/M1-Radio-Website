@@ -92,36 +92,36 @@ h3 { font-size: 20px; font-weight: 700; }
    PROJECTS — קישורים לפרויקטי המשפחה
    ========================================================================== */
 .projects-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
 }
 @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
-.pcard {
-  position: relative; display: block;
+.proj-btn {
+  position: relative; display: flex; align-items: center; gap: 10px;
   background: var(--white); border: 1.5px solid var(--line); border-radius: var(--radius);
-  padding: 16px 16px; transition: .2s;
+  padding: 8px 10px; transition: .2s;
 }
-.pcard:hover { transform: translateY(-4px); border-color: var(--purple); box-shadow: var(--shadow-lift); }
-.pcard h3 { margin-top: 10px; font-size: 15px; }
-.pcard p { margin-top: 4px; color: var(--muted); font-size: 13px; }
+.proj-btn:hover { transform: translateY(-3px); border-color: var(--purple); box-shadow: var(--shadow-lift); }
+.pc-text { min-width: 0; flex: 1; }
+.proj-btn h3 { font-size: 13px; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.proj-btn p { margin-top: 2px; color: var(--muted); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .pc-dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; }
-.pc-arrow { position: absolute; top: 16px; left: 16px; color: var(--purple); font-size: 16px; transition: .2s; }
-.pcard:hover .pc-arrow { transform: translateX(-4px); }
-.pcard.is-soon { opacity: .6; cursor: default; }
-.pcard.is-soon:hover { transform: none; border-color: var(--line); box-shadow: none; }
+.pc-arrow { flex-shrink: 0; color: var(--purple); font-size: 14px; transition: .2s; }
+.proj-btn:hover .pc-arrow { transform: translateX(-4px); }
+.proj-btn.is-soon { opacity: .6; cursor: default; }
+.proj-btn.is-soon:hover { transform: none; border-color: var(--line); box-shadow: none; }
 .pc-logo {
-  display: flex; align-items: center; justify-content: center;
-  width: 44px; height: 44px; border-radius: 12px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 34px; height: 34px; border-radius: 9px; overflow: hidden;
   background: linear-gradient(135deg, var(--purple), var(--pink));
-  margin-bottom: 2px;
 }
-.pc-logo img { width: 100%; height: 100%; object-fit: contain; padding: 7px; }
+.pc-logo img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
 .pc-logo.pc-logo--cover img { object-fit: cover; padding: 0; }
 .pc-logo.pc-logo--placeholder { background: var(--lilac); }
-.pc-logo.pc-logo--placeholder .pc-dot { width: 14px; height: 14px; }
+.pc-logo.pc-logo--placeholder .pc-dot { width: 12px; height: 12px; }
 .pc-badge {
-  position: absolute; top: 22px; left: 22px;
-  background: var(--lilac); color: var(--purple); font-size: 12px; font-weight: 700;
-  padding: 4px 10px; border-radius: 999px;
+  flex-shrink: 0;
+  background: var(--lilac); color: var(--purple); font-size: 10px; font-weight: 700;
+  padding: 3px 8px; border-radius: 999px; white-space: nowrap;
 }
 
 /* ==========================================================================
