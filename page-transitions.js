@@ -4,11 +4,48 @@
   var root = document.documentElement;
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   var navStorageKey = "m1-nav-from";
+  var themeStorageKey = "m1-theme";
   var leaveDelay = 130;
   var isLeaving = false;
 
   root.classList.add("motion-enabled");
   if (reducedMotion.matches) root.classList.add("page-ready");
+
+  function getStoredTheme() {
+    try {
+      var stored = window.localStorage.getItem(themeStorageKey);
+      return stored === "light" ? "light" : "dark";
+    } catch (error) {
+      return "dark";
+    }
+  }
+
+  var currentTheme = getStoredTheme();
+  root.setAttribute("data-theme", currentTheme);
+
+  function syncThemeToggles() {
+    document.querySelectorAll(".theme-toggle").forEach(function (btn) {
+      var isDark = currentTheme === "dark";
+      btn.setAttribute("aria-pressed", isDark ? "true" : "false");
+      btn.textContent = isDark ? "☀️" : "🌙";
+    });
+  }
+
+  function setupThemeToggle() {
+    syncThemeToggles();
+    document.querySelectorAll(".theme-toggle").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        currentTheme = currentTheme === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", currentTheme);
+        syncThemeToggles();
+        try {
+          window.localStorage.setItem(themeStorageKey, currentTheme);
+        } catch (error) {
+          // Theme still applies for this page view even when storage is unavailable.
+        }
+      });
+    });
+  }
 
   function routeKey(value) {
     var url = new URL(value, window.location.href);
@@ -163,6 +200,7 @@
   function init() {
     setCurrentPageSemantics();
     setupNavIndicator();
+    setupThemeToggle();
     document.addEventListener("click", handlePageLink);
     showPage();
   }
