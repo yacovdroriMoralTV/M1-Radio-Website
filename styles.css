@@ -92,21 +92,30 @@ h3 { font-size: 20px; font-weight: 700; }
    PROJECTS — קישורים לפרויקטי המשפחה
    ========================================================================== */
 .projects-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
 }
+@media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
 .pcard {
   position: relative; display: block;
   background: var(--white); border: 1.5px solid var(--line); border-radius: var(--radius);
-  padding: 26px 24px; transition: .2s;
+  padding: 16px 16px; transition: .2s;
 }
 .pcard:hover { transform: translateY(-4px); border-color: var(--purple); box-shadow: var(--shadow-lift); }
-.pcard h3 { margin-top: 14px; font-size: 18px; }
-.pcard p { margin-top: 6px; color: var(--muted); font-size: 15px; }
+.pcard h3 { margin-top: 10px; font-size: 15px; }
+.pcard p { margin-top: 4px; color: var(--muted); font-size: 13px; }
 .pc-dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; }
-.pc-arrow { position: absolute; top: 24px; left: 24px; color: var(--purple); font-size: 18px; transition: .2s; }
+.pc-arrow { position: absolute; top: 16px; left: 16px; color: var(--purple); font-size: 16px; transition: .2s; }
 .pcard:hover .pc-arrow { transform: translateX(-4px); }
 .pcard.is-soon { opacity: .6; cursor: default; }
 .pcard.is-soon:hover { transform: none; border-color: var(--line); box-shadow: none; }
+.pc-logo {
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 12px; overflow: hidden;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  margin-bottom: 2px;
+}
+.pc-logo img { width: 100%; height: 100%; object-fit: contain; padding: 7px; }
+.pc-logo.pc-logo--cover img { object-fit: cover; padding: 0; }
 .pc-badge {
   position: absolute; top: 22px; left: 22px;
   background: var(--lilac); color: var(--purple); font-size: 12px; font-weight: 700;
@@ -313,21 +322,22 @@ a.disc-live:hover, a.disc-live:focus-visible {
 
 /* --- HERO projects strip: первая строка hero, ссылки на проекты Moral --- */
 .hero-strip {
-  display: flex; flex-wrap: wrap; gap: 10px;
-  padding-top: 22px; margin-bottom: -4px;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding-top: 18px; margin-bottom: -4px;
 }
 .hs-pill {
-  display: inline-flex; align-items: center; gap: 7px;
+  display: inline-flex; align-items: center; gap: 6px;
   background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .18);
-  color: #EFE9FA; font-size: 13px; font-weight: 600;
-  padding: 7px 14px; border-radius: 999px; transition: .18s;
+  color: #EFE9FA; font-size: 12px; font-weight: 600;
+  padding: 5px 11px; border-radius: 999px; transition: .18s;
   backdrop-filter: blur(6px);
 }
 .hs-pill:hover { background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .32); transform: translateY(-2px); }
-.hs-pill .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+.hs-pill .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+.hs-pill .hs-logo { width: 16px; height: 16px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 @media (max-width: 767px) {
-  .hero-strip { padding-top: 14px; }
-  .hs-pill { font-size: 12px; padding: 6px 11px; }
+  .hero-strip { padding-top: 12px; }
+  .hs-pill { font-size: 11px; padding: 4px 9px; }
 }
 
 /* --- HERO вариант B: фоновая фотография (index-hero2.html).
